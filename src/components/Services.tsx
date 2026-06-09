@@ -12,25 +12,60 @@ interface ServiceCard {
 
 const CARDS: ServiceCard[] = [
   {
-    id: "seo",
-    num: "01",
-    title: "SEO Dominance",
-    desc: "Rank where it counts. Technical audits, semantic content architecture, and authoritative link ecosystems — built for long-term compounding returns.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80",
-  },
-  {
     id: "web",
-    num: "02",
+    num: "01",
     title: "Web Development",
     desc: "Performance-first, conversion-obsessed. Fast, scalable, and beautifully engineered digital products.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80",
   },
   {
     id: "brand",
-    num: "03",
+    num: "02",
     title: "Brand Design",
     desc: "Identity systems that make an impression before you say a word. Logo, type, visual language.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80",
+  },
+  {
+    id: "digital-marketing",
+    num: "03",
+    title: "Digital Marketing",
+    desc: "Data-driven campaigns designed to maximize ROI, target the right demographics, and scale your business.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+  },
+  {
+    id: "content-creation",
+    num: "04",
+    title: "Content Creation",
+    desc: "Engaging, high-quality content that tells your brand narrative and resonates deeply with your audience.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+  },
+  {
+    id: "growth-hacking",
+    num: "05",
+    title: "Growth Hacking",
+    desc: "Rapid, data-backed experimentation across marketing channels to identify the most efficient ways to scale.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+  },
+  {
+    id: "ui-ux",
+    num: "06",
+    title: "UI/UX Design",
+    desc: "Intuitive, user-centric interfaces that deliver seamless, high-converting digital experiences.",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80",
+  },
+  {
+    id: "social-media",
+    num: "07",
+    title: "Social Media",
+    desc: "Strategic content and community management to grow your presence and engage meaningfully with followers.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
+  },
+  {
+    id: "seo",
+    num: "08",
+    title: "SEO Strategies",
+    desc: "Rank where it counts. Technical audits, semantic content architecture, and authoritative link ecosystems.",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80",
   }
 ];
 
@@ -44,7 +79,7 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
       initial={{ opacity: 0, y: 48 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.75, delay: index * 0.12, ease: [0.23, 1, 0.32, 1] }}
-      className={`relative rounded-[14px] overflow-hidden bg-bg-card border-[0.5px] border-border-subtle backdrop-blur-md p-8 flex flex-col justify-end transition-all duration-400 ease-[--ease-custom] hover:border-border-gold hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_0.5px_rgba(200,150,60,0.12)] group ${index === 0 ? 'md:row-span-2 min-h-[500px] md:min-h-0' : 'min-h-[260px] md:min-h-0'}`}
+      className="relative rounded-[14px] overflow-hidden bg-bg-card border-[0.5px] border-border-subtle backdrop-blur-md p-8 flex flex-col justify-end transition-all duration-400 ease-[--ease-custom] hover:border-border-gold hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_0.5px_rgba(200,150,60,0.12)] group min-h-[260px] md:min-h-0"
       style={{ perspective: 800 }}
       whileHover={{ rotateX: 2, rotateY: -2, y: -4 }}
     >
@@ -111,7 +146,7 @@ export default function Services() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.65fr_1fr] md:grid-rows-[310px_270px] gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[280px]">
           {CARDS.map((card, i) => (
             <BentoCard key={card.id} card={card} index={i} />
           ))}

@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
 
 const ITEMS = [
-  "SEO Strategy", "Web Development", "Brand Design", "Digital Marketing",
-  "Content Creation", "Growth Hacking", "UI/UX Design", "Social Media"
+  "Web Development", "Brand Design", "Digital Marketing", "Content Creation",
+  "Growth Hacking", "UI/UX Design", "Social Media", "SEO Strategies"
 ];
 
 export default function MarqueeTicker() {
