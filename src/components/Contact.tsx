@@ -122,10 +122,14 @@ export default function Contact() {
                   className="bg-white/5 border border-border-subtle rounded-lg px-4 py-3.5 font-sans text-[0.875rem] font-light text-cream outline-none transition-all duration-200 focus:border-gold focus:bg-gold/5 focus:ring-4 focus:ring-gold/10 appearance-none cursor-pointer"
                 >
                   <option value="" className="bg-[#1a1510]">Select a Service</option>
-                  <option value="Brand Development" className="bg-[#1a1510]">Brand Development</option>
-                  <option value="Social Media Strategy" className="bg-[#1a1510]">Social Media Strategy</option>
-                  <option value="Paid Advertising" className="bg-[#1a1510]">Paid Advertising</option>
-                  <option value="Web Design & Development" className="bg-[#1a1510]">Web Design & Development</option>
+                  <option value="Web Development" className="bg-[#1a1510]">Web Development</option>
+                  <option value="Brand Design" className="bg-[#1a1510]">Brand Design</option>
+                  <option value="Digital Marketing" className="bg-[#1a1510]">Digital Marketing</option>
+                  <option value="Content Creation" className="bg-[#1a1510]">Content Creation</option>
+                  <option value="Growth Hacking" className="bg-[#1a1510]">Growth Hacking</option>
+                  <option value="UI/UX Design" className="bg-[#1a1510]">UI/UX Design</option>
+                  <option value="Social Media" className="bg-[#1a1510]">Social Media</option>
+                  <option value="SEO Strategies" className="bg-[#1a1510]">SEO Strategies</option>
                 </select>
               </div>
 

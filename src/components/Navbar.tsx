@@ -25,6 +25,7 @@ export default function Navbar() {
       <ul className="hidden md:flex gap-10 list-none">
         {[
           { label: 'Home', href: '#hero' },
+          { label: 'About', href: '#about' },
           { label: 'Services', href: '#services' },
           { label: 'Contact', href: '#contact' }
         ].map((item) => (

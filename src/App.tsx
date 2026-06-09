@@ -24,8 +24,8 @@ export default function App() {
       
       <main>
         <Hero />
-        <About />
         <MarqueeTicker />
+        <About />
         <Services />
         <Contact />
       </main>
