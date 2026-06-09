@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  --color-bg: #160E00;
+  --color-bg-mid: #1E1500;
+  --color-bg-card: rgba(255,255,255,0.04);
+  --color-gold: #C8963C;
+  --color-gold-bright: #E6B84A;
+  --color-gold-dim: #A07828;
+  --color-cream: #F5F0E8;
+  --color-cream-muted: rgba(245,240,232,0.6);
+  --color-cream-dim: rgba(245,240,232,0.28);
+  --color-border-subtle: rgba(255,255,255,0.07);
+  --color-border-gold: rgba(200,150,60,0.22);
+  
+  --ease-custom: cubic-bezier(0.23,1,0.32,1);
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-cream font-sans font-light overflow-x-hidden;
+    cursor: none;
+  }
+
+  body::after {
+    content: ''; 
+    position: fixed; 
+    inset: 0;
+    z-index: 9990; 
+    pointer-events: none; 
+    opacity: .025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
+  }
+
+  a, button, input, textarea {
+    cursor: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(90deg, #B87820 0%, #E6B84A 35%, #C8963C 65%, #A07828 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
