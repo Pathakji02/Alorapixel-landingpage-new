@@ -116,7 +116,21 @@ export default function Contact() {
               </div>
               
               <div className="flex flex-col gap-2">
-                <label htmlFor="fmsg" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">Your Message</label>
+                <label htmlFor="fservice" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">Service Required</label>
+                <select
+                  id="fservice" name="service_requested" required
+                  className="bg-white/5 border border-border-subtle rounded-lg px-4 py-3.5 font-sans text-[0.875rem] font-light text-cream outline-none transition-all duration-200 focus:border-gold focus:bg-gold/5 focus:ring-4 focus:ring-gold/10 appearance-none cursor-pointer"
+                >
+                  <option value="" className="bg-[#1a1510]">Select a Service</option>
+                  <option value="Brand Development" className="bg-[#1a1510]">Brand Development</option>
+                  <option value="Social Media Strategy" className="bg-[#1a1510]">Social Media Strategy</option>
+                  <option value="Paid Advertising" className="bg-[#1a1510]">Paid Advertising</option>
+                  <option value="Web Design & Development" className="bg-[#1a1510]">Web Design & Development</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="fmsg" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">About Your Project</label>
                 <textarea 
                   id="fmsg" name="message" rows={5} placeholder="Tell us about your project..." required 
                   className="bg-white/5 border border-border-subtle rounded-lg px-4 py-3.5 font-sans text-[0.875rem] font-light text-cream outline-none resize-none transition-all duration-200 focus:border-gold focus:bg-gold/5 focus:ring-4 focus:ring-gold/10 placeholder:text-cream-dim"

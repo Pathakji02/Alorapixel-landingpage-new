@@ -1,13 +1,9 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { ArrowOutward } from './Icons';
 import Button from './Button';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, 250]);
-  
   const heroRef = useRef<HTMLDivElement>(null);
   const [spotPosition, setSpotPosition] = useState({ x: 50, y: 50 });
   const [isHovering, setIsHovering] = useState(false);
@@ -97,7 +93,6 @@ export default function Hero() {
       `}</style>
 
       <motion.h1
-        style={{ y: y1 }}
         initial={{ opacity: 0, y: 36 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
@@ -109,7 +104,6 @@ export default function Hero() {
       </motion.h1>
 
       <motion.p
-        style={{ y: y2 }}
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.7, ease: [0.23, 1, 0.32, 1] }}

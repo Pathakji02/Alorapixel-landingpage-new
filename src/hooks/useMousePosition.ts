@@ -11,13 +11,22 @@ export function useMousePosition() {
       });
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      setMousePosition({
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+      });
+    };
+
     // Initialize position
     setMousePosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
