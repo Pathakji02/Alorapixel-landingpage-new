@@ -1,18 +1,26 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
+import ParticleCanvas from './ParticleCanvas';
 
 export default function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="about" className="relative z-[1] bg-bg py-24 md:py-32 overflow-hidden">
-      {/* Background Ambient Orb */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gold/5 to-transparent blur-3xl rounded-full w-[500px] h-[500px] pointer-events-none"
-        animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-      />
+    <section id="about" className="relative w-full z-0 bg-bg py-24 md:py-32 overflow-hidden">
+      {/* Background Canvas Layer */}
+      <motion.div className="absolute inset-0 w-full h-full -z-10 bg-bg opacity-100 pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.1] blur-[1px]">
+          <ParticleCanvas />
+        </div>
+
+        {/* Depth Spotlight (Replaces simple orb with larger breathing spotlight) */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-gold/3 to-transparent blur-[120px] rounded-full w-[800px] h-[800px] pointer-events-none"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+      </motion.div>
 
       <div ref={ref} className="relative z-10 max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">
 

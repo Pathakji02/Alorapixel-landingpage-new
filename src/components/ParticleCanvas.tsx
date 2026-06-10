@@ -21,28 +21,36 @@ class Particle {
   init(rand: boolean) {
     this.x = Math.random() * this.width;
     this.y = rand ? Math.random() * this.height : this.height + 6;
-    this.vx = (Math.random() - 0.5) * 0.25;
-    this.vy = -(Math.random() * 0.45 + 0.15);
-    this.r = Math.random() * 1.3 + 0.3;
-    this.a = Math.random() * 0.4 + 0.08;
+    // Slower, lazier movement for stardust feel
+    this.vx = (Math.random() - 0.5) * 0.1;
+    this.vy = -(Math.random() * 0.1 + 0.05);
+    this.r = Math.random() * 1.5 + 0.5;
+    this.a = Math.random() * 0.5 + 0.1;
     this.life = 0;
-    this.max = Math.random() * 280 + 160;
+    this.max = Math.random() * 400 + 200;
   }
 
   tick(pmx: number, pmy: number) {
     const dx = pmx - this.x;
     const dy = pmy - this.y;
     const d = Math.sqrt(dx * dx + dy * dy);
+    // Subtle reaction to mouse
     if (d < 200) {
-      this.vx += (dx / d) * 0.01;
-      this.vy += (dy / d) * 0.01;
+      this.vx += (dx / d) * 0.005;
+      this.vy += (dy / d) * 0.005;
     }
-    this.vx *= 0.98;
-    this.vy *= 0.98;
+    this.vx *= 0.99;
+    this.vy *= 0.99;
     this.x += this.vx;
     this.y += this.vy;
     this.life++;
-    if (this.y < -10 || this.life > this.max) this.init(false);
+
+    // Add slow breathing effect to radius
+    this.r = this.r + Math.sin(this.life * 0.05) * 0.02;
+
+    if (this.y < -10 || this.life > this.max || this.x < -10 || this.x > this.width + 10) {
+      this.init(false);
+    }
   }
 
   draw(ctx: CanvasRenderingContext2D) {
@@ -87,11 +95,30 @@ export default function ParticleCanvas() {
     };
     window.addEventListener('resize', handleResize);
 
-    const N = 90;
+    const N = 150; // Increased to approx 150
     const pts: Particle[] = Array.from({ length: N }, () => new Particle(W, H, true));
 
     const loop = () => {
       ctx.clearRect(0, 0, W, H);
+
+      // Draw faint lines between nearby particles
+      for (let i = 0; i < N; i++) {
+        for (let j = i + 1; j < N; j++) {
+          const dx = pts[i].x - pts[j].x;
+          const dy = pts[i].y - pts[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(245, 240, 232, ${0.1 * (1 - dist / 100)})`; // Faint cream lines
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
       pts.forEach((p) => {
         p.tick(pointerRef.current.x, pointerRef.current.y);
         p.draw(ctx);
@@ -109,7 +136,7 @@ export default function ParticleCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
       aria-hidden="true"
     />
   );
