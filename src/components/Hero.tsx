@@ -5,66 +5,11 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const [spotPosition, setSpotPosition] = useState({ x: 50, y: 50 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
-      const rect = heroRef.current.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      setSpotPosition({ x, y });
-    };
-
-    const target = heroRef.current;
-    if (target) {
-      target.addEventListener('mousemove', handleMouseMove);
-      target.addEventListener('mouseenter', () => setIsHovering(true));
-      target.addEventListener('mouseleave', () => setIsHovering(false));
-    }
-
-    return () => {
-      if (target) {
-        target.removeEventListener('mousemove', handleMouseMove);
-        target.removeEventListener('mouseenter', () => setIsHovering(true));
-        target.removeEventListener('mouseleave', () => setIsHovering(false));
-      }
-    };
-  }, []);
 
   return (
     <section ref={heroRef} id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-8 pt-36 pb-20 z-[1] overflow-hidden">
       
-      {/* Background Mesh (Amber Blobs) */}
-      <div 
-        className="absolute inset-[0] z-[0] pointer-events-none"
-        style={{
-          background: `
-            radial-gradient(ellipse 70% 55% at 18% 75%, rgba(180,100,10,0.32) 0%, transparent 60%),
-            radial-gradient(ellipse 55% 45% at 82% 22%, rgba(200,140,30,0.22) 0%, transparent 55%),
-            radial-gradient(ellipse 40% 35% at 60% 85%, rgba(160,80,5,0.18) 0%, transparent 50%)
-          `,
-          animation: 'mesh-d 14s ease-in-out infinite alternate'
-        }}
-      />
-      <style>{`
-        @keyframes mesh-d {
-          0%   { transform: scale(1)    translate(0,0); opacity:.9; }
-          50%  { transform: scale(1.1)  translate(2%,-3%); opacity:1; }
-          100% { transform: scale(.95)  translate(-1%,2%); opacity:.85; }
-        }
-      `}</style>
-
-      {/* Spotlight */}
-      <div 
-        className="absolute inset-[0] z-[0] pointer-events-none transition-all duration-300 ease-out"
-        style={{
-          background: isHovering 
-            ? `radial-gradient(650px circle at ${spotPosition.x}% ${spotPosition.y}%, rgba(200,140,30,.11) 0%, transparent 65%)`
-            : `radial-gradient(600px circle at 50% 50%, rgba(200,140,30,.06) 0%, transparent 65%)`
-        }}
-      />
+      {/* Note: Global background mesh and spotlights are now in GlobalEffects */}
 
       {/* Rotating Rings */}
       <div className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] border-[0.5px] border-gold/10 rounded-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] pointer-events-none z-[0] animate-[ring-rot_30s_linear_infinite]">

@@ -3,6 +3,7 @@ import Button from './Button';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -10,6 +11,28 @@ export default function Navbar() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-50% 0px -50% 0px', // triggers when the section is in the middle of the viewport
+      }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   return (
@@ -24,21 +47,32 @@ export default function Navbar() {
       
       <ul className="hidden md:flex gap-10 list-none">
         {[
-          { label: 'Home', href: '#hero' },
-          { label: 'About', href: '#about' },
-          { label: 'Services', href: '#services' },
-          { label: 'Contact', href: '#contact' }
-        ].map((item) => (
-          <li key={item.label}>
-            <a
-              href={item.href}
-              className="text-cream-muted text-sm tracking-wide relative hover:text-cream transition-colors duration-200 hov group"
-            >
-              {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 ease-[--ease-custom] group-hover:w-full"></span>
-            </a>
-          </li>
-        ))}
+          { label: 'Home', href: 'hero' },
+          { label: 'About', href: 'about' },
+          { label: 'Services', href: 'services' },
+          { label: 'Contact', href: 'contact' }
+        ].map((item) => {
+          const isActive = activeSection === item.href;
+          return (
+            <li key={item.label}>
+              <a
+                href={`#${item.href}`}
+                className={`text-sm tracking-wide relative transition-all duration-300 hov group ${
+                  isActive
+                    ? 'text-gold font-medium [text-shadow:0_0_12px_rgba(200,150,60,0.6)]'
+                    : 'text-cream-muted hover:text-cream'
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300 ease-[--ease-custom] ${
+                    isActive ? 'w-full shadow-[0_0_8px_rgba(200,150,60,0.8)]' : 'w-0 group-hover:w-full'
+                  }`}
+                ></span>
+              </a>
+            </li>
+          );
+        })}
       </ul>
 
       <Button href="#contact" variant="clear">

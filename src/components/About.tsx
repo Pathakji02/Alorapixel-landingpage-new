@@ -6,32 +6,8 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="about" className="relative w-full z-0 bg-bg py-24 md:py-32 overflow-hidden">
-      {/* Background Layer */}
-      <div className="absolute inset-[0] z-[0] pointer-events-none">
-        {/* Zero-Gravity Stardust */}
-        {Array.from({ length: 40 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-gold rounded-full blur-[1px]"
-            style={{ top: Math.random() * 100 + '%', left: Math.random() * 100 + '%' }}
-            animate={{ y: [0, -30, 0], opacity: [0, 0.4, 0] }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: Math.random() * 5
-            }}
-          />
-        ))}
-
-        {/* Depth Spotlight (Replaces simple orb with larger breathing spotlight) */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-gold/3 to-transparent blur-[120px] rounded-full w-[800px] h-[800px] pointer-events-none"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        />
-      </div>
+    <section id="about" className="relative w-full z-0 py-24 md:py-32 overflow-hidden bg-bg-mid/50">
+      {/* Global backgrounds are handled in GlobalEffects, but we use bg-bg-mid/50 to maintain the distinct deep brown lighting of this section without obscuring global stars completely. */}
 
       <div ref={ref} className="relative z-10 max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">
 
