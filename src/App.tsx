@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import CustomCursor from "./components/CustomCursor";
-import ParticleCanvas from "./components/ParticleCanvas";
+import GlobalEffects from "./components/GlobalEffects";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -16,8 +16,8 @@ export default function App() {
   return (
     <>
       {/* Background & Overlays */}
+      <GlobalEffects />
       <CustomCursor />
-      <ParticleCanvas />
       
       {/* App Structure */}
       <Navbar />

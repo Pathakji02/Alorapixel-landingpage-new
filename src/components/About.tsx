@@ -1,26 +1,62 @@
-import { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { motion, useInView } from 'motion/react';
-import ParticleCanvas from './ParticleCanvas';
+
+const Constellation = React.memo(function Constellation() {
+  const stars = useMemo(() => {
+    return Array.from({ length: 40 }).map(() => ({
+      initialTop: Math.random() * 100 + '%',
+      initialLeft: Math.random() * 100 + '%',
+      initialScale: Math.random() * 0.5 + 0.5,
+      animateTop: [Math.random() * 100 + '%', Math.random() * 100 + '%'],
+      animateLeft: [Math.random() * 100 + '%', Math.random() * 100 + '%'],
+      opacityValues: [0, Math.random() * 0.5 + 0.3, 0],
+      scaleValues: [Math.random() * 0.5 + 0.5, Math.random() * 1.2 + 0.8, Math.random() * 0.5 + 0.5],
+      duration: Math.random() * 20 + 20,
+      opacityDuration: Math.random() * 4 + 4,
+    }));
+  }, []);
+
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {stars.map((star, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 bg-gold rounded-full blur-[1px]"
+          initial={{
+            top: star.initialTop,
+            left: star.initialLeft,
+            opacity: 0,
+            scale: star.initialScale
+          }}
+          animate={{
+            top: star.animateTop,
+            left: star.animateLeft,
+            opacity: star.opacityValues,
+            scale: star.scaleValues
+          }}
+          transition={{
+            duration: star.duration,
+            repeat: Infinity,
+            ease: 'linear',
+            opacity: {
+              duration: star.opacityDuration,
+              repeat: Infinity,
+              ease: 'easeInOut'
+            }
+          }}
+        />
+      ))}
+    </div>
+  );
+});
 
 export default function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="about" className="relative w-full z-0 bg-bg py-24 md:py-32 overflow-hidden">
-      {/* Background Canvas Layer */}
-      <motion.div className="absolute inset-0 w-full h-full -z-10 bg-bg opacity-100 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.1] blur-[1px]">
-          <ParticleCanvas />
-        </div>
-
-        {/* Depth Spotlight (Replaces simple orb with larger breathing spotlight) */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-gold/3 to-transparent blur-[120px] rounded-full w-[800px] h-[800px] pointer-events-none"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        />
-      </motion.div>
+    <section id="about" className="relative w-full z-0 py-24 md:py-32 overflow-hidden bg-bg-mid">
+      <Constellation />
 
       <div ref={ref} className="relative z-10 max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">
 
