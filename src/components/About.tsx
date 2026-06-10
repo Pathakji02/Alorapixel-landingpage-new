@@ -3,16 +3,16 @@ import { motion, useInView } from 'motion/react';
 
 const Constellation = React.memo(function Constellation() {
   const stars = useMemo(() => {
-    return Array.from({ length: 40 }).map(() => ({
+    return Array.from({ length: 70 }).map(() => ({
       initialTop: Math.random() * 100 + '%',
       initialLeft: Math.random() * 100 + '%',
-      initialScale: Math.random() * 0.5 + 0.5,
+      initialScale: Math.random() * 0.8 + 0.8,
       animateTop: [Math.random() * 100 + '%', Math.random() * 100 + '%'],
       animateLeft: [Math.random() * 100 + '%', Math.random() * 100 + '%'],
-      opacityValues: [0, Math.random() * 0.5 + 0.3, 0],
-      scaleValues: [Math.random() * 0.5 + 0.5, Math.random() * 1.2 + 0.8, Math.random() * 0.5 + 0.5],
-      duration: Math.random() * 20 + 20,
-      opacityDuration: Math.random() * 4 + 4,
+      opacityValues: [0, Math.random() * 0.7 + 0.5, 0],
+      scaleValues: [Math.random() * 0.8 + 0.8, Math.random() * 1.5 + 1.2, Math.random() * 0.8 + 0.8],
+      duration: Math.random() * 15 + 15,
+      opacityDuration: Math.random() * 3 + 3,
     }));
   }, []);
 
@@ -21,7 +21,7 @@ const Constellation = React.memo(function Constellation() {
       {stars.map((star, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-gold rounded-full blur-[1px]"
+          className="absolute w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_8px_rgba(200,150,60,0.8)] blur-[0.5px]"
           initial={{
             top: star.initialTop,
             left: star.initialLeft,
@@ -69,12 +69,12 @@ export default function About() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
-            <h2 className="font-serif text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-cream mb-6">
+            <h2 className="font-serif text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-gold mb-6">
               Discover Alora Pixel
             </h2>
 
             <p className="text-[1rem] leading-[1.8] text-cream-muted font-light max-w-[600px]">
-              Brands that feel intentional... from identity to execution. Alora Pixel is a newly launched, premium digital marketing agency designed for startups and established businesses that want to dominate their space. We believe that true luxury in design isn't just about how it looks, but how it works. We help brands stand out in crowded markets by blending aesthetic elegance with data-driven strategy.
+              Brands that feel intentional... from identity to execution. Alora Pixel is a newly launched, premium digital invitations agency designed for startups and established businesses that want to dominate their space. We believe that true luxury in design isn't just about how it looks, but how it works. We help brands stand out in crowded markets by blending aesthetic elegance with data-driven strategy.
             </p>
           </motion.div>
 
@@ -98,7 +98,7 @@ export default function About() {
             >
               <h3 className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Vision</h3>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                To be the premier creative partner for brands that refuse to settle for mediocrity, setting the standard for modern, luxury digital marketing.
+                To be the premier creative partner for brands that refuse to settle for mediocrity, setting the standard for modern, luxury digital invitations.
               </p>
             </motion.div>
           </div>
@@ -110,7 +110,7 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.23, 1, 0.32, 1] }}
         >
-          <h3 className="text-[2rem] font-serif font-bold text-cream mb-10 text-center">The Alora Approach</h3>
+          <h3 className="text-[2rem] font-serif font-bold text-gold mb-10 text-center">The Alora Approach</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
@@ -154,7 +154,7 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.75, ease: [0.23, 1, 0.32, 1] }}
         >
-          <h3 className="text-[2rem] font-serif font-bold text-cream mb-10 text-center">The Alora Advantage</h3>
+          <h3 className="text-[2rem] font-serif font-bold text-gold mb-10 text-center">The Alora Advantage</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}

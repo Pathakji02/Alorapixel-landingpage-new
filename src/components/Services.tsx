@@ -28,8 +28,8 @@ const CARDS: ServiceCard[] = [
   {
     id: "digital-marketing",
     num: "03",
-    title: "Digital Marketing",
-    desc: "Data-driven campaigns designed to maximize ROI, target the right demographics, and scale your business.",
+    title: "Digital Invitations",
+    desc: "Custom digital invitations combining elegant design with seamless sharing. From animated e-invites to interactive RSVPs, we create unforgettable first impressions for any celebration.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
   },
   {

@@ -114,6 +114,14 @@ export default function Contact() {
                   className="bg-white/5 border border-border-subtle rounded-lg px-4 py-3.5 font-sans text-[0.875rem] font-light text-cream outline-none transition-all duration-200 focus:border-gold focus:bg-gold/5 focus:ring-4 focus:ring-gold/10 placeholder:text-cream-dim"
                 />
               </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="fphone" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">Phone Number (Optional)</label>
+                <input
+                  type="tel" id="fphone" name="phone" placeholder="+1 (555) 000-0000" autoComplete="tel"
+                  className="bg-white/5 border border-border-subtle rounded-lg px-4 py-3.5 font-sans text-[0.875rem] font-light text-cream outline-none transition-all duration-200 focus:border-gold focus:bg-gold/5 focus:ring-4 focus:ring-gold/10 placeholder:text-cream-dim"
+                />
+              </div>
               
               <div className="flex flex-col gap-2">
                 <label htmlFor="fservice" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">Service Required</label>
@@ -124,7 +132,7 @@ export default function Contact() {
                   <option value="" className="bg-[#1a1510]">Select a Service</option>
                   <option value="Web Development" className="bg-[#1a1510]">Web Development</option>
                   <option value="Brand Design" className="bg-[#1a1510]">Brand Design</option>
-                  <option value="Digital Marketing" className="bg-[#1a1510]">Digital Marketing</option>
+                  <option value="Digital Invitations" className="bg-[#1a1510]">Digital Invitations</option>
                   <option value="Content Creation" className="bg-[#1a1510]">Content Creation</option>
                   <option value="Growth Hacking" className="bg-[#1a1510]">Growth Hacking</option>
                   <option value="UI/UX Design" className="bg-[#1a1510]">UI/UX Design</option>
@@ -134,7 +142,7 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="fmsg" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">About Your Project</label>
+                <label htmlFor="fmsg" className="text-[0.66rem] font-medium tracking-[0.16em] uppercase text-cream-dim">Your Enquiry</label>
                 <textarea 
                   id="fmsg" name="message" rows={5} placeholder="Tell us about your project..." required 
                   className="bg-white/5 border border-border-subtle rounded-lg px-4 py-3.5 font-sans text-[0.875rem] font-light text-cream outline-none resize-none transition-all duration-200 focus:border-gold focus:bg-gold/5 focus:ring-4 focus:ring-gold/10 placeholder:text-cream-dim"
