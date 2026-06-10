@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import ParticleCanvas from './ParticleCanvas';
 
 export default function About() {
   const ref = useRef(null);
@@ -8,11 +7,23 @@ export default function About() {
 
   return (
     <section id="about" className="relative w-full z-0 bg-bg py-24 md:py-32 overflow-hidden">
-      {/* Background Canvas Layer */}
-      <motion.div className="absolute inset-0 w-full h-full -z-10 bg-bg opacity-100 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.1] blur-[1px]">
-          <ParticleCanvas />
-        </div>
+      {/* Background Layer */}
+      <div className="absolute inset-[0] z-[0] pointer-events-none">
+        {/* Zero-Gravity Stardust */}
+        {Array.from({ length: 40 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-gold rounded-full blur-[1px]"
+            style={{ top: Math.random() * 100 + '%', left: Math.random() * 100 + '%' }}
+            animate={{ y: [0, -30, 0], opacity: [0, 0.4, 0] }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: Math.random() * 5
+            }}
+          />
+        ))}
 
         {/* Depth Spotlight (Replaces simple orb with larger breathing spotlight) */}
         <motion.div
@@ -20,7 +31,7 @@ export default function About() {
           animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.4, 0.3] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         />
-      </motion.div>
+      </div>
 
       <div ref={ref} className="relative z-10 max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">
 
