@@ -63,58 +63,6 @@ export default function GlobalEffects() {
         }}
       />
 
-      {/* Continuous Natural Constellation Effect */}
-      {/* Floating stars that drift across the entire screen naturally */}
-      <Constellation />
     </div>
   );
 }
-
-const Constellation = React.memo(function Constellation() {
-  const stars = useMemo(() => {
-    return Array.from({ length: 40 }).map(() => ({
-      initialTop: Math.random() * 100 + '%',
-      initialLeft: Math.random() * 100 + '%',
-      initialScale: Math.random() * 0.5 + 0.5,
-      animateTop: [Math.random() * 100 + '%', Math.random() * 100 + '%'],
-      animateLeft: [Math.random() * 100 + '%', Math.random() * 100 + '%'],
-      opacityValues: [0, Math.random() * 0.5 + 0.3, 0],
-      scaleValues: [Math.random() * 0.5 + 0.5, Math.random() * 1.2 + 0.8, Math.random() * 0.5 + 0.5],
-      duration: Math.random() * 20 + 20,
-      opacityDuration: Math.random() * 4 + 4,
-    }));
-  }, []);
-
-  return (
-    <>
-      {stars.map((star, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-gold rounded-full blur-[1px]"
-          initial={{
-            top: star.initialTop,
-            left: star.initialLeft,
-            opacity: 0,
-            scale: star.initialScale
-          }}
-          animate={{
-            top: star.animateTop,
-            left: star.animateLeft,
-            opacity: star.opacityValues,
-            scale: star.scaleValues
-          }}
-          transition={{
-            duration: star.duration,
-            repeat: Infinity,
-            ease: 'linear',
-            opacity: {
-              duration: star.opacityDuration,
-              repeat: Infinity,
-              ease: 'easeInOut'
-            }
-          }}
-        />
-      ))}
-    </>
-  );
-});

@@ -14,24 +14,35 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-50% 0px -50% 0px', // triggers when the section is in the middle of the viewport
-      }
-    );
+    let sections: NodeListOf<Element>;
+    let observer: IntersectionObserver;
 
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => observer.observe(section));
+    const initObserver = () => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        },
+        {
+          rootMargin: '-50% 0px -50% 0px', // triggers when the section is in the middle of the viewport
+        }
+      );
+
+      sections = document.querySelectorAll('section[id]');
+      sections.forEach((section) => observer.observe(section));
+    };
+
+    // Use a short timeout to guarantee all sibling components have mounted in the DOM
+    const timeoutId = setTimeout(initObserver, 100);
 
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
+      clearTimeout(timeoutId);
+      if (observer && sections) {
+        sections.forEach((section) => observer.unobserve(section));
+      }
     };
   }, []);
 
@@ -59,14 +70,14 @@ export default function Navbar() {
                 href={`#${item.href}`}
                 className={`text-sm tracking-wide relative transition-all duration-300 hov group ${
                   isActive
-                    ? 'text-gold font-medium [text-shadow:0_0_12px_rgba(200,150,60,0.6)]'
-                    : 'text-cream-muted hover:text-cream'
+                    ? 'text-gold font-bold [text-shadow:0_0_15px_rgba(255,215,0,0.9),0_0_30px_rgba(255,215,0,0.6)] drop-shadow-[0_0_10px_rgba(255,215,0,0.8)] scale-110 inline-block'
+                    : 'text-cream-muted hover:text-cream hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
                 }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300 ease-[--ease-custom] ${
-                    isActive ? 'w-full shadow-[0_0_8px_rgba(200,150,60,0.8)]' : 'w-0 group-hover:w-full'
+                  className={`absolute -bottom-1.5 left-0 h-[2px] bg-gold transition-all duration-300 ease-[--ease-custom] ${
+                    isActive ? 'w-full shadow-[0_0_12px_rgba(255,215,0,1)]' : 'w-0 group-hover:w-full'
                   }`}
                 ></span>
               </a>
