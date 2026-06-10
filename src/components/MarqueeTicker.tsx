@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
 const ITEMS = [
-  "Web Development", "Brand Design", "Digital Marketing", "Content Creation",
+  "Web Development", "Brand Design", "Digital Invitations", "Content Creation",
   "Growth Hacking", "UI/UX Design", "Social Media", "SEO Strategies"
 ];
 

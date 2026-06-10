@@ -132,7 +132,7 @@ export default function Contact() {
                   <option value="" className="bg-[#1a1510]">Select a Service</option>
                   <option value="Web Development" className="bg-[#1a1510]">Web Development</option>
                   <option value="Brand Design" className="bg-[#1a1510]">Brand Design</option>
-                  <option value="Digital Marketing" className="bg-[#1a1510]">Digital Marketing</option>
+                  <option value="Digital Invitations" className="bg-[#1a1510]">Digital Invitations</option>
                   <option value="Content Creation" className="bg-[#1a1510]">Content Creation</option>
                   <option value="Growth Hacking" className="bg-[#1a1510]">Growth Hacking</option>
                   <option value="UI/UX Design" className="bg-[#1a1510]">UI/UX Design</option>

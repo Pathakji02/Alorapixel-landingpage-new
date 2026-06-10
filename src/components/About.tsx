@@ -74,7 +74,7 @@ export default function About() {
             </h2>
 
             <p className="text-[1rem] leading-[1.8] text-cream-muted font-light max-w-[600px]">
-              Brands that feel intentional... from identity to execution. Alora Pixel is a newly launched, premium digital marketing agency designed for startups and established businesses that want to dominate their space. We believe that true luxury in design isn't just about how it looks, but how it works. We help brands stand out in crowded markets by blending aesthetic elegance with data-driven strategy.
+              Brands that feel intentional... from identity to execution. Alora Pixel is a newly launched, premium digital invitations agency designed for startups and established businesses that want to dominate their space. We believe that true luxury in design isn't just about how it looks, but how it works. We help brands stand out in crowded markets by blending aesthetic elegance with data-driven strategy.
             </p>
           </motion.div>
 
@@ -98,7 +98,7 @@ export default function About() {
             >
               <h3 className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Vision</h3>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                To be the premier creative partner for brands that refuse to settle for mediocrity, setting the standard for modern, luxury digital marketing.
+                To be the premier creative partner for brands that refuse to settle for mediocrity, setting the standard for modern, luxury digital invitations.
               </p>
             </motion.div>
           </div>
