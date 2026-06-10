@@ -6,31 +6,33 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="about" className="relative z-[1] bg-bg py-24 md:py-32">
-      <div ref={ref} className="max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">
+    <section id="about" className="relative z-[1] bg-bg py-24 md:py-32 overflow-hidden">
+      {/* Background Ambient Orb */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gold/5 to-transparent blur-3xl rounded-full w-[500px] h-[500px] pointer-events-none"
+        animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      />
+
+      <div ref={ref} className="relative z-10 max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">
 
         {/* Block 1: Introduction vs Mission/Vision */}
         <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
           {/* Left Column (Header & Intro) */}
-          <div className="flex-1">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-              className="font-serif text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-cream mb-6"
-            >
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+          >
+            <h2 className="font-serif text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-cream mb-6">
               Discover Alora Pixel
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.23, 1, 0.32, 1] }}
-              className="text-[1rem] leading-[1.8] text-cream-muted font-light max-w-[600px]"
-            >
+            <p className="text-[1rem] leading-[1.8] text-cream-muted font-light max-w-[600px]">
               Brands that feel intentional... from identity to execution. Alora Pixel is a newly launched, premium digital marketing agency designed for startups and established businesses that want to dominate their space. We believe that true luxury in design isn't just about how it looks, but how it works. We help brands stand out in crowded markets by blending aesthetic elegance with data-driven strategy.
-            </motion.p>
-          </div>
+            </p>
+          </motion.div>
 
           {/* Right Column (Mission & Vision) */}
           <div className="flex-1 flex flex-col gap-10 mt-4 md:mt-16">
@@ -66,30 +68,39 @@ export default function About() {
         >
           <h3 className="text-[2rem] font-serif font-bold text-cream mb-10 text-center">The Alora Approach</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-4">Design</h4>
               <ul className="text-cream-muted space-y-2">
                 <li>Brand Identity</li>
                 <li>Creative visuals</li>
                 <li>Professional presentation</li>
               </ul>
-            </div>
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-4">Engage</h4>
               <ul className="text-cream-muted space-y-2">
                 <li>Audience connection</li>
                 <li>Social media strategy</li>
                 <li>Meaningful interactions</li>
               </ul>
-            </div>
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-4">Convert</h4>
               <ul className="text-cream-muted space-y-2">
                 <li>Lead generation</li>
                 <li>Business growth</li>
                 <li>Marketing performance</li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -101,30 +112,42 @@ export default function About() {
         >
           <h3 className="text-[2rem] font-serif font-bold text-cream mb-10 text-center">The Alora Advantage</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Strategic Thinking</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 Every decision is rooted in data and tailored to your specific market position.
               </p>
-            </div>
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Creative Execution</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 We deliver stunning visuals and copy that command attention and elevate your brand.
               </p>
-            </div>
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Modern Marketing</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 Leveraging the latest trends, platforms, and technologies to keep you ahead.
               </p>
-            </div>
-            <div className="p-6 bg-surface border border-border-subtle rounded-sm">
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+            >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Growth-Focused Results</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 Our ultimate goal is turning engagement into measurable business growth.
               </p>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
