@@ -52,7 +52,7 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-gold rounded-full pointer-events-none z-[9999]"
+        className="hidden md:block fixed top-0 left-0 w-2.5 h-2.5 bg-gold rounded-full pointer-events-none z-[9999]"
         style={{
           x: x - 5,
           y: y - 5,
@@ -64,7 +64,7 @@ export default function CustomCursor() {
         transition={{ duration: 0.15 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-9 h-9 border-[1.5px] border-gold opacity-50 rounded-full pointer-events-none z-[9998]"
+        className="hidden md:block fixed top-0 left-0 w-9 h-9 border-[1.5px] border-gold opacity-50 rounded-full pointer-events-none z-[9998]"
         style={{
           x: cursorX,
           y: cursorY,
