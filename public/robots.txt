@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mydomain.com/sitemap.xml
+Sitemap: https://alorapixel-landingpage-new-new.vercel.app/sitemap.xml
