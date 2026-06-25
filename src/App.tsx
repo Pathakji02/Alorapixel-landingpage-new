@@ -12,6 +12,7 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
+import CookieBanner from "./components/CookieBanner";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
       </main>
       
       <Footer />
+      <CookieBanner />
     </>
   );
 }
