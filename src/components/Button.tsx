@@ -1,5 +1,6 @@
 import { ReactNode, useRef, useState, MouseEvent } from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -40,18 +41,39 @@ export default function Button({ children, className = '', onClick, href, varian
   const combinedClasses = `${baseClass} ${variantClass} ${className}`;
 
   if (href) {
+    // Determine if it's an external link or internal route
+    if (href.startsWith('http') || href.startsWith('mailto:')) {
+      return (
+        <motion.a
+          ref={ref as any}
+          href={href}
+          className={combinedClasses}
+          onMouseMove={handleMouse}
+          onMouseLeave={reset}
+          animate={{ x: position.x, y: position.y }}
+          transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+          target={href.startsWith('http') ? "_blank" : undefined}
+          rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+        >
+          {children}
+        </motion.a>
+      );
+    }
+
+    // Internal link uses React Router
     return (
-      <motion.a
+      <motion.div
         ref={ref as any}
-        href={href}
-        className={combinedClasses}
         onMouseMove={handleMouse}
         onMouseLeave={reset}
         animate={{ x: position.x, y: position.y }}
         transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+        style={{ display: 'inline-block' }}
       >
-        {children}
-      </motion.a>
+        <Link to={href} className={combinedClasses}>
+          {children}
+        </Link>
+      </motion.div>
     );
   }
 
