@@ -57,7 +57,7 @@ export default function Navbar() {
       </ul>
 
       <Button href="/contact" variant="clear">
-        Get Started
+        Get Your Free Marketing Audit
       </Button>
     </nav>
   );

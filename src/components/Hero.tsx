@@ -41,11 +41,11 @@ export default function Hero() {
         initial={{ opacity: 0, y: 36 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
-        className="relative z-[2] font-serif text-[clamp(2.8rem,7.5vw,7.5rem)] font-bold leading-[1.0] tracking-[-0.03em] text-cream"
+        className="relative z-[2] font-serif text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[1.1] tracking-[-0.03em] text-cream"
       >
-        Transform Ideas Into<br />
-        <span className="text-gold-gradient block">Impactful Digital</span>
-        Experiences
+        Digital Marketing Agency in<br />
+        <span className="text-gold-gradient block">Ahmedabad That Grows</span>
+        Your Brand.
       </motion.h1>
 
       <motion.p
@@ -55,7 +55,9 @@ export default function Hero() {
         className="relative z-[2] text-[clamp(0.9rem,1.6vw,1.05rem)] font-light leading-[1.8] text-cream-muted max-w-[520px] mt-7 mx-auto"
       >
         We are a premium creative studio turning clicks into customers.
-        Intentional branding, strategic marketing, and growth-focused web design.
+        Intentional <a href="#brand" className="text-gold hover:underline">branding</a>,
+        strategic <a href="#seo" className="text-gold hover:underline">marketing</a>,
+        and growth-focused <a href="#web-dev" className="text-gold hover:underline">web design</a>.
       </motion.p>
 
       <motion.div
@@ -65,7 +67,7 @@ export default function Hero() {
         className="relative z-[2] flex flex-col md:flex-row gap-4 mt-10"
       >
         <Button href="/contact" variant="primary">
-          Get Started <ArrowOutward />
+          Get Your Free Marketing Audit <ArrowOutward />
         </Button>
         <Button href="/services" variant="ghost">
           View Services

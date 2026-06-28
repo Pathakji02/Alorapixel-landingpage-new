@@ -70,11 +70,14 @@ export default function About() {
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
             <h2 className="font-serif text-[clamp(2.2rem,4vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-gold mb-6">
-              Discover Alora Pixel
+              About
             </h2>
 
-            <p className="text-[1rem] leading-[1.8] text-cream-muted font-light max-w-[600px]">
-              Brands that feel intentional... from identity to execution. Alora Pixel is a newly launched, premium digital invitations agency designed for startups and established businesses that want to dominate their space. We believe that true luxury in design isn't just about how it looks, but how it works. We help brands stand out in crowded markets by blending aesthetic elegance with data-driven strategy.
+            <p className="text-[1.05rem] leading-[1.8] text-cream-muted font-light max-w-[600px]">
+              AloraPixel is a premier Digital Marketing Agency Ahmedabad, born from the vision of transforming how brands interact with the digital world. We don't just provide services; we build legacies. Our team of experts specializes in creating intentional brand identities that resonate deeply with your target audience. As a leading Branding Agency Ahmedabad, we understand that true luxury in design isn't just about aesthetic elegance—it's about functional excellence and data-driven strategy.
+            </p>
+            <p className="text-[1rem] leading-[1.8] text-cream-muted font-light max-w-[600px] mt-6">
+              In a crowded marketplace, standing out requires more than just being present. It requires a strategic partner who understands the nuances of SEO, Social Media, and high-converting Website Development Ahmedabad. We pride ourselves on our ability to blend creativity with technical precision, ensuring that every project we undertake not only looks stunning but also drives measurable business growth and customer engagement.
             </p>
           </motion.div>
 
@@ -87,7 +90,7 @@ export default function About() {
             >
               <h3 className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Mission</h3>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                To transform ambitious ideas into impactful digital experiences that command attention, foster genuine engagement, and drive measurable conversions.
+                To transform ambitious ideas into impactful digital experiences that command attention, foster genuine engagement, and drive measurable conversions for businesses in Ahmedabad and across the globe.
               </p>
             </motion.div>
 
@@ -98,7 +101,7 @@ export default function About() {
             >
               <h3 className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Vision</h3>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                To be the premier creative partner for brands that refuse to settle for mediocrity, setting the standard for modern, luxury digital invitations.
+                To be the premier creative partner for brands that refuse to settle for mediocrity, setting the global standard for modern, luxury digital marketing and strategic brand positioning.
               </p>
             </motion.div>
           </div>
@@ -114,35 +117,44 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-4">Design</h4>
-              <ul className="text-cream-muted space-y-2">
-                <li>Brand Identity</li>
-                <li>Creative visuals</li>
-                <li>Professional presentation</li>
+              <h4 className="text-[1.3rem] font-bold text-cream mb-4">Design with Intent</h4>
+              <p className="text-cream-muted text-[0.9rem] leading-relaxed mb-4">
+                We believe every pixel should serve a purpose. Our design philosophy centers on creating visual languages that are not only beautiful but also strategically aligned with your business objectives as a premier Branding Agency Ahmedabad.
+              </p>
+              <ul className="text-cream-muted space-y-2 text-[0.85rem]">
+                <li>• Strategic Brand Identity</li>
+                <li>• Creative Visual Systems</li>
+                <li>• Professional Presentation Layers</li>
               </ul>
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-4">Engage</h4>
-              <ul className="text-cream-muted space-y-2">
-                <li>Audience connection</li>
-                <li>Social media strategy</li>
-                <li>Meaningful interactions</li>
+              <h4 className="text-[1.3rem] font-bold text-cream mb-4">Engage Authentically</h4>
+              <p className="text-cream-muted text-[0.9rem] leading-relaxed mb-4">
+                Engagement is the currency of the digital age. We help you build meaningful connections with your audience through data-driven social media strategies and compelling content that resonates with your local and global market.
+              </p>
+              <ul className="text-cream-muted space-y-2 text-[0.85rem]">
+                <li>• Audience Connection Analysis</li>
+                <li>• Social Media Strategy & Growth</li>
+                <li>• Meaningful Digital Interactions</li>
               </ul>
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-4">Convert</h4>
-              <ul className="text-cream-muted space-y-2">
-                <li>Lead generation</li>
-                <li>Business growth</li>
-                <li>Marketing performance</li>
+              <h4 className="text-[1.3rem] font-bold text-cream mb-4">Convert Effectively</h4>
+              <p className="text-cream-muted text-[0.9rem] leading-relaxed mb-4">
+                Our ultimate goal is your growth. We utilize advanced conversion rate optimization (CRO) and SEO Services Ahmedabad to ensure that your digital presence translates into measurable business success and sustainable lead generation.
+              </p>
+              <ul className="text-cream-muted space-y-2 text-[0.85rem]">
+                <li>• High-Quality Lead Generation</li>
+                <li>• Scalable Business Growth</li>
+                <li>• Performance-Driven Marketing</li>
               </ul>
             </motion.div>
           </div>
@@ -158,38 +170,38 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Strategic Thinking</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                Every decision is rooted in data and tailored to your specific market position.
+                Every decision is rooted in data and tailored to your specific market position. We analyze your competitors and identify unique opportunities for growth in the Ahmedabad market and beyond.
               </p>
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Creative Execution</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                We deliver stunning visuals and copy that command attention and elevate your brand.
+                We deliver stunning visuals and copy that command attention and elevate your brand. Our creative team works tirelessly to ensure your brand stands out with a unique and premium digital voice.
               </p>
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Modern Marketing</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                Leveraging the latest trends, platforms, and technologies to keep you ahead.
+                Leveraging the latest trends, platforms, and technologies to keep you ahead. From Meta ads to advanced SEO strategies, we use the most effective tools to grow your brand's digital footprint.
               </p>
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Growth-Focused Results</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
-                Our ultimate goal is turning engagement into measurable business growth.
+                Our ultimate goal is turning engagement into measurable business growth. We focus on KPIs that matter—conversions, revenue, and brand authority—ensuring your investment delivers real value.
               </p>
             </motion.div>
           </div>

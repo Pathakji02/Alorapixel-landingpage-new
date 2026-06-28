@@ -59,8 +59,7 @@ export default function Contact() {
               transition={{ duration: 0.75, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
               className="font-serif text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-cream mb-4"
             >
-              Let&apos;s Build Something
-              <em className="text-gold italic block">Remarkable.</em>
+              Contact
             </motion.h2>
             
             <motion.p
@@ -155,7 +154,7 @@ export default function Contact() {
                 className="relative overflow-hidden flex items-center justify-center gap-2 px-[2.2rem] py-[0.9rem] font-sans text-[0.9rem] font-medium tracking-[0.03em] rounded-full transition-all duration-200 bg-gold text-[#140C00] hover:bg-gold-bright hover:shadow-[0_0_28px_rgba(230,184,74,0.45)] w-full disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <span>
-                  {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent ✓' : status === 'error' ? 'Try Again' : 'Send Message'}
+                  {status === 'loading' ? 'Sending...' : status === 'success' ? 'Sent ✓' : status === 'error' ? 'Try Again' : 'Book Free Consultation'}
                 </span>
                 {status === 'idle' && <ArrowOutward />}
               </button>

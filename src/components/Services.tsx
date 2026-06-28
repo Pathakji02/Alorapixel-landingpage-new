@@ -12,59 +12,59 @@ interface ServiceCard {
 
 const CARDS: ServiceCard[] = [
   {
-    id: "web",
+    id: "web-dev",
     num: "01",
-    title: "Web Development",
-    desc: "Performance-first, conversion-obsessed. Fast, scalable, and beautifully engineered digital products.",
+    title: "Website Development Ahmedabad",
+    desc: "We build high-performance, conversion-obsessed websites that serve as your brand's digital flagship. Our Website Development Ahmedabad services focus on speed, scalability, and premium user experience to turn visitors into customers.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80",
   },
   {
     id: "brand",
     num: "02",
     title: "Brand Design",
-    desc: "Identity systems that make an impression before you say a word. Logo, type, visual language.",
+    desc: "Establish a powerful identity with our Branding Agency Ahmedabad expertise. We create comprehensive visual systems, including logos and typography, that communicate luxury and trust before you even speak a word.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80",
   },
   {
-    id: "digital-marketing",
+    id: "seo",
     num: "03",
-    title: "Digital Invitations",
-    desc: "Elegant digital invitations with seamless sharing and interactive RSVPs for unforgettable celebrations.",
+    title: "SEO Services Ahmedabad",
+    desc: "Rank where it counts. Our SEO Services Ahmedabad include technical audits, semantic content architecture, and authoritative link building to ensure your brand dominates search results for your most important keywords.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
   },
   {
-    id: "content-creation",
+    id: "social-media",
     num: "04",
-    title: "Content Creation",
-    desc: "Engaging, high-quality content that tells your brand narrative and resonates deeply with your audience.",
+    title: "Social Media Agency Ahmedabad",
+    desc: "As a leading Social Media Agency Ahmedabad, we manage your presence with strategic content and community management. We build engagement and loyalty across platforms like Instagram, Facebook, and LinkedIn.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
   },
   {
-    id: "growth-hacking",
+    id: "gmb",
     num: "05",
-    title: "Growth Hacking",
-    desc: "Rapid, data-backed experimentation across marketing channels to identify the most efficient ways to scale.",
+    title: "Google My Business Services",
+    desc: "Dominate local search with our Google My Business Services. We optimize your local profile to ensure you appear in the 'Local 3-Pack', driving high-intent traffic from Ahmedabad customers directly to your doorstep.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
   },
   {
     id: "ui-ux",
     num: "06",
     title: "UI/UX Design",
-    desc: "Intuitive, user-centric interfaces that deliver seamless, high-converting digital experiences.",
+    desc: "Create seamless digital journeys with our user-centric design approach. We build intuitive interfaces that enhance user satisfaction and maximize conversion rates across all your digital products and platforms.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80",
   },
   {
-    id: "social-media",
+    id: "content",
     num: "07",
-    title: "Social Media",
-    desc: "Strategic content and community management to grow your presence and engage meaningfully with followers.",
+    title: "Content Creation",
+    desc: "Tell your story with high-quality, engaging content. From professional photography to compelling copy, we create assets that resonate with your audience and build your brand's authority in the digital space.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
   },
   {
-    id: "seo",
+    id: "meta-ads",
     num: "08",
-    title: "SEO Strategies",
-    desc: "Rank where it counts. Technical audits, semantic content architecture, and authoritative link ecosystems.",
+    title: "Meta & Google Ads",
+    desc: "Scale your business with targeted advertising. We manage your Meta and Google ads with a focus on data-driven optimization and ROI, ensuring your marketing budget delivers the best possible results.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80",
   }
 ];
@@ -75,6 +75,7 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
 
   return (
     <motion.article
+      id={card.id}
       ref={ref}
       initial={{ opacity: 0, y: 48 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -106,9 +107,9 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
 }
 
 const FEATURES = [
-  { icon: Target, title: "Targeted Strategy", desc: "Data-driven campaigns engineered for your specific audience and growth goals." },
-  { icon: Zap, title: "Rapid Execution", desc: "From brief to live — fast. No agency bloat, no endless rounds. Just results." },
-  { icon: Cpu, title: "Future-Proof Design", desc: "Built on modern stacks that scale with you as your audience grows." }
+  { icon: Target, title: "Targeted Strategy", desc: "Data-driven campaigns engineered for your specific audience and growth goals in the Ahmedabad market." },
+  { icon: Zap, title: "Rapid Execution", desc: "From brief to live — fast. No agency bloat, no endless rounds. Just results that scale your brand." },
+  { icon: Cpu, title: "Future-Proof Design", desc: "Built on modern stacks that scale with you as your audience and business grows globally." }
 ];
 
 export default function Services() {
@@ -132,7 +133,7 @@ export default function Services() {
               Our Expertise
             </span>
             <h2 className="font-serif text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] text-cream">
-              Craft. Strategy.<br />Results.
+              Services
             </h2>
           </motion.div>
           <motion.p
@@ -141,12 +142,12 @@ export default function Services() {
             transition={{ duration: 0.75, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
             className="text-[0.95rem] leading-[1.85] text-cream-muted max-w-[500px]"
           >
-            Three disciplines, one focused team. We do what matters for your growth — with precision and intent.
+            As a full-service Digital Marketing Agency Ahmedabad, we provide comprehensive solutions to elevate your brand. From high-end Website Development Ahmedabad to strategic SEO and social media growth, our team delivers precision and intent in every project.
           </motion.p>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[280px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[300px] md:auto-rows-[320px]">
           {CARDS.map((card, i) => (
             <BentoCard key={card.id} card={card} index={i} />
           ))}
@@ -172,6 +173,22 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+
+        {/* Additional Content Block for Word Count */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={featureInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
+          className="mt-20 text-center max-w-[900px] mx-auto"
+        >
+          <h3 className="font-serif text-[1.8rem] text-gold mb-6">Why Choose AloraPixel for Your Digital Growth?</h3>
+          <p className="text-[1rem] leading-[1.8] text-cream-muted font-light mb-8">
+            In the rapidly evolving digital landscape of Ahmedabad, having a generic online presence is no longer enough. You need a Digital Marketing Agency Ahmedabad that understands the intricacies of user behavior, search engine algorithms, and premium brand positioning. Our approach to Website Development Ahmedabad ensures that your site is not just a digital brochure but a powerful tool for lead generation and brand storytelling. Combined with our SEO Services Ahmedabad and Social Media Agency Ahmedabad expertise, we provide a holistic growth ecosystem that ensures your brand stays ahead of the competition and achieves sustainable long-term success.
+          </p>
+          <p className="text-[0.95rem] leading-[1.8] text-cream-muted font-light">
+            Whether you are a startup looking for your first Branding Agency Ahmedabad or an established enterprise needing to revitalize your digital strategy, AloraPixel has the expertise and creative vision to bring your ideas to life. We focus on transparency, data-driven decisions, and exceptional design to deliver results that matter.
+          </p>
+        </motion.div>
 
       </div>
     </section>
