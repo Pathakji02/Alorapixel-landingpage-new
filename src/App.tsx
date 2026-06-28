@@ -2,17 +2,19 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { usePageTracking } from "./hooks/usePageTracking";
 import CustomCursor from "./components/CustomCursor";
 import GlobalEffects from "./components/GlobalEffects";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import MarqueeTicker from "./components/MarqueeTicker";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
 
-export default function App() {
+function AppContent() {
+  usePageTracking();
   return (
     <>
       {/* Background & Overlays */}
@@ -23,11 +25,12 @@ export default function App() {
       <Navbar />
       
       <main>
-        <Hero />
-        <MarqueeTicker />
-        <About />
-        <Services />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
       
       <Footer />
@@ -35,3 +38,10 @@ export default function App() {
   );
 }
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}

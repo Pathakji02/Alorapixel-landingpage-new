@@ -1,5 +1,6 @@
 import { ReactNode, useRef, useState, MouseEvent } from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -40,6 +41,25 @@ export default function Button({ children, className = '', onClick, href, varian
   const combinedClasses = `${baseClass} ${variantClass} ${className}`;
 
   if (href) {
+    const isInternal = href.startsWith('/');
+
+    if (isInternal) {
+      return (
+        <motion.div
+          ref={ref as any}
+          onMouseMove={handleMouse}
+          onMouseLeave={reset}
+          animate={{ x: position.x, y: position.y }}
+          transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+          className="inline-flex"
+        >
+          <Link to={href} className={combinedClasses}>
+            {children}
+          </Link>
+        </motion.div>
+      );
+    }
+
     return (
       <motion.a
         ref={ref as any}

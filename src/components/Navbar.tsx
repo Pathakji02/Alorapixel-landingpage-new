@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import Button from './Button';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,38 +14,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    let sections: NodeListOf<Element>;
-    let observer: IntersectionObserver;
-
-    const initObserver = () => {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id);
-            }
-          });
-        },
-        {
-          rootMargin: '-50% 0px -50% 0px', // triggers when the section is in the middle of the viewport
-        }
-      );
-
-      sections = document.querySelectorAll('section[id]');
-      sections.forEach((section) => observer.observe(section));
-    };
-
-    // Use a short timeout to guarantee all sibling components have mounted in the DOM
-    const timeoutId = setTimeout(initObserver, 100);
-
-    return () => {
-      clearTimeout(timeoutId);
-      if (observer && sections) {
-        sections.forEach((section) => observer.unobserve(section));
-      }
-    };
-  }, []);
+  const NAV_ITEMS = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Contact', href: '/contact' }
+  ];
 
   return (
     <nav
@@ -52,41 +27,41 @@ export default function Navbar() {
         scrolled ? 'bg-bg/85 backdrop-blur-xl border-b-[0.5px] border-border-subtle' : ''
       }`}
     >
-      <a href="#hero" className="font-serif text-2xl font-bold text-gold no-underline tracking-tighter shrink-0 hov">
+      <Link to="/" className="font-serif text-2xl font-bold text-gold no-underline tracking-tighter shrink-0 hov">
         AloraPixel
-      </a>
+      </Link>
       
       <ul className="hidden md:flex gap-10 list-none">
-        {[
-          { label: 'Home', href: 'hero' },
-          { label: 'About', href: 'about' },
-          { label: 'Services', href: 'services' },
-          { label: 'Contact', href: 'contact' }
-        ].map((item) => {
-          const isActive = activeSection === item.href;
+        {NAV_ITEMS.map((item) => {
           return (
             <li key={item.label}>
-              <a
-                href={`#${item.href}`}
-                className={`text-sm tracking-wide relative transition-all duration-300 hov group ${
-                  isActive
-                    ? 'text-gold font-bold [text-shadow:0_0_15px_rgba(255,215,0,0.9),0_0_30px_rgba(255,215,0,0.6)] drop-shadow-[0_0_10px_rgba(255,215,0,0.8)] scale-110 inline-block'
-                    : 'text-cream-muted hover:text-cream hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-                }`}
+              <NavLink
+                to={item.href}
+                className={({ isActive }) =>
+                  `text-sm tracking-wide relative transition-all duration-300 hov group ${
+                    isActive
+                      ? 'text-gold font-bold [text-shadow:0_0_15px_rgba(255,215,0,0.9),0_0_30px_rgba(255,215,0,0.6)] drop-shadow-[0_0_10px_rgba(255,215,0,0.8)] scale-110 inline-block'
+                      : 'text-cream-muted hover:text-cream hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+                  }`
+                }
               >
-                {item.label}
-                <span
-                  className={`absolute -bottom-1.5 left-0 h-[2px] bg-gold transition-all duration-300 ease-[--ease-custom] ${
-                    isActive ? 'w-full shadow-[0_0_12px_rgba(255,215,0,1)]' : 'w-0 group-hover:w-full'
-                  }`}
-                ></span>
-              </a>
+                {({ isActive }) => (
+                  <>
+                    {item.label}
+                    <span
+                      className={`absolute -bottom-1.5 left-0 h-[2px] bg-gold transition-all duration-300 ease-[--ease-custom] ${
+                        isActive ? 'w-full shadow-[0_0_12px_rgba(255,215,0,1)]' : 'w-0 group-hover:w-full'
+                      }`}
+                    ></span>
+                  </>
+                )}
+              </NavLink>
             </li>
           );
         })}
       </ul>
 
-      <Button href="#contact" variant="clear">
+      <Button href="/contact" variant="clear">
         Get Started
       </Button>
     </nav>
