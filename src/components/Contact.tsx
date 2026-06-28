@@ -38,7 +38,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative z-[1] bg-bg-mid border-t-[0.5px] border-border-subtle">
+    <section id="contact" className="relative z-[1] bg-bg-mid border-t-[0.5px] border-border-subtle min-h-[100dvh] pt-24">
       <div ref={ref} className="max-w-[1180px] mx-auto px-6 py-20 md:p-28">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 md:gap-24 items-start">
           

@@ -55,7 +55,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="about" className="relative w-full z-0 py-24 md:py-32 overflow-hidden bg-bg-mid">
+    <section id="about" className="relative w-full z-0 py-24 md:py-32 overflow-hidden bg-bg-mid min-h-[100dvh] pt-28">
       <Constellation />
 
       <div ref={ref} className="relative z-10 max-w-[1180px] mx-auto px-6 md:px-12 flex flex-col gap-24">

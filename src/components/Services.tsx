@@ -118,7 +118,7 @@ export default function Services() {
   const featureInView = useInView(featureRef, { once: true, margin: "-10%" });
 
   return (
-    <section id="services" className="relative z-[1] bg-bg">
+    <section id="services" className="relative z-[1] bg-bg min-h-[100dvh] pt-24">
       <div className="max-w-[1180px] mx-auto px-6 py-20 md:p-28">
         
         {/* Header */}

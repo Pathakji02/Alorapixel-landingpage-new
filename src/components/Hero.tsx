@@ -64,12 +64,17 @@ export default function Hero() {
         transition={{ duration: 0.9, delay: 0.9, ease: [0.23, 1, 0.32, 1] }}
         className="relative z-[2] flex flex-col md:flex-row gap-4 mt-10"
       >
-        <Button href="#contact" variant="primary">
+        <Button href="/contact" variant="primary">
           Get Started <ArrowOutward />
         </Button>
-        <Button href="#services" variant="ghost">
+        <Button href="/services" variant="ghost">
           View Services
         </Button>
+        <div className="md:hidden">
+          <Button href="/about" variant="ghost" className="w-full">
+            About Us
+          </Button>
+        </div>
       </motion.div>
 
       {/* Scroll Hint */}

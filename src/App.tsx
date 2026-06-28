@@ -12,6 +12,8 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
+import CookieBanner from "./components/CookieBanner";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
@@ -25,14 +27,16 @@ export default function App() {
       <Navbar />
       
       <main>
-        <Hero />
-        <MarqueeTicker />
-        <About />
-        <Services />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<><Hero /><MarqueeTicker /></>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
       
       <Footer />
+      <CookieBanner />
     </>
   );
 }
