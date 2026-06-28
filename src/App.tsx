@@ -9,10 +9,13 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import MarqueeTicker from "./components/MarqueeTicker";
 import Services from "./components/Services";
+import Process from "./components/Process";
+import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
 import CookieBanner from "./components/CookieBanner";
+import NotFound from "./components/NotFound";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -28,10 +31,21 @@ export default function App() {
       
       <main>
         <Routes>
-          <Route path="/" element={<><Hero /><MarqueeTicker /></>} />
+          <Route path="/" element={
+            <>
+              <Hero />
+              <MarqueeTicker />
+              <About />
+              <Services />
+              <Process />
+              <FAQ />
+              <Contact />
+            </>
+          } />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       
