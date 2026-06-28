@@ -70,6 +70,11 @@ export default function Hero() {
         <Button href="/services" variant="ghost">
           View Services
         </Button>
+        <div className="md:hidden">
+          <Button href="/about" variant="ghost" className="w-full">
+            About Us
+          </Button>
+        </div>
       </motion.div>
 
       {/* Scroll Hint */}
