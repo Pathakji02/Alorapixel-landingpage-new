@@ -85,7 +85,7 @@ export default function About() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
             >
-              <h3 className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Mission</h3>
+              <div className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Mission</div>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 To transform ambitious ideas into impactful digital experiences that command attention, foster genuine engagement, and drive measurable conversions.
               </p>
@@ -96,7 +96,7 @@ export default function About() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.45, ease: [0.23, 1, 0.32, 1] }}
             >
-              <h3 className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Vision</h3>
+              <div className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-gold mb-3">Our Vision</div>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 To be the premier creative partner for brands that refuse to settle for mediocrity, setting the standard for modern, luxury digital invitations.
               </p>
@@ -110,13 +110,13 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.23, 1, 0.32, 1] }}
         >
-          <h3 className="text-[2rem] font-serif font-bold text-gold mb-10 text-center">The Alora Approach</h3>
+          <h2 className="text-[2rem] font-serif font-bold text-gold mb-10 text-center">The Alora Approach</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-4">Design</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-4">Design</div>
               <ul className="text-cream-muted space-y-2">
                 <li>Brand Identity</li>
                 <li>Creative visuals</li>
@@ -127,7 +127,7 @@ export default function About() {
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-4">Engage</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-4">Engage</div>
               <ul className="text-cream-muted space-y-2">
                 <li>Audience connection</li>
                 <li>Social media strategy</li>
@@ -138,7 +138,7 @@ export default function About() {
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-4">Convert</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-4">Convert</div>
               <ul className="text-cream-muted space-y-2">
                 <li>Lead generation</li>
                 <li>Business growth</li>
@@ -154,13 +154,13 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.75, ease: [0.23, 1, 0.32, 1] }}
         >
-          <h3 className="text-[2rem] font-serif font-bold text-gold mb-10 text-center">The Alora Advantage</h3>
+          <h2 className="text-[2rem] font-serif font-bold text-gold mb-10 text-center">The Alora Advantage</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-3">Strategic Thinking</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-3">Strategic Thinking</div>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 Every decision is rooted in data and tailored to your specific market position.
               </p>
@@ -169,7 +169,7 @@ export default function About() {
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-3">Creative Execution</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-3">Creative Execution</div>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 We deliver stunning visuals and copy that command attention and elevate your brand.
               </p>
@@ -178,7 +178,7 @@ export default function About() {
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-3">Modern Marketing</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-3">Modern Marketing</div>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 Leveraging the latest trends, platforms, and technologies to keep you ahead.
               </p>
@@ -187,7 +187,7 @@ export default function About() {
               whileHover={{ y: -6, scale: 1.02 }}
               className="p-6 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
             >
-              <h4 className="text-[1.2rem] font-bold text-cream mb-3">Growth-Focused Results</h4>
+              <div className="text-[1.2rem] font-bold text-cream mb-3">Growth-Focused Results</div>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
                 Our ultimate goal is turning engagement into measurable business growth.
               </p>

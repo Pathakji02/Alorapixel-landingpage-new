@@ -163,9 +163,9 @@ export default function Services() {
               className={`p-8 transition-colors duration-300 hover:bg-gold/5 group ${i !== FEATURES.length - 1 ? 'border-b md:border-b-0 md:border-r border-border-subtle' : ''}`}
             >
               <feat.icon className="w-5 h-5 text-gold mb-3 transition-transform duration-300 ease-[--ease-custom] group-hover:scale-[1.2] group-hover:-rotate-6" />
-              <h4 className="font-serif text-[1.1rem] font-semibold text-cream mb-1.5 transition-colors duration-250 group-hover:text-gold">
+              <div className="font-serif text-[1.1rem] font-semibold text-cream mb-1.5 transition-colors duration-250 group-hover:text-gold">
                 {feat.title}
-              </h4>
+              </div>
               <p className="text-[0.8rem] leading-[1.65] text-cream-muted">
                 {feat.desc}
               </p>

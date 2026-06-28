@@ -37,6 +37,7 @@ export default function Navbar() {
             <li key={item.label}>
               <NavLink
                 to={item.href}
+                end={item.href === '/'}
                 className={({ isActive }) =>
                   `text-sm tracking-wide relative transition-all duration-300 hov group ${
                     isActive
