@@ -1,13 +1,11 @@
 import { motion } from 'motion/react';
 import { ArrowOutward } from './Icons';
 import Button from './Button';
-import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={heroRef} id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-8 pt-36 pb-20 z-[1] overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-8 pt-36 pb-20 z-[1] overflow-hidden">
       
       {/* Note: Global background mesh and spotlights are now in GlobalEffects */}
 
