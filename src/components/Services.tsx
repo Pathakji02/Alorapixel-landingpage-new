@@ -29,7 +29,7 @@ const CARDS: ServiceCard[] = [
     id: "digital-marketing",
     num: "03",
     title: "Digital Invitations",
-    desc: "Elegant digital invitations with seamless sharing and interactive RSVPs for unforgettable celebrations.",
+    desc: "Data-driven campaigns designed to maximize ROI, target the right demographics, and scale your business.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80",
   },
   {
@@ -79,7 +79,7 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
       initial={{ opacity: 0, y: 48 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.75, delay: index * 0.12, ease: [0.23, 1, 0.32, 1] }}
-      className="relative rounded-[14px] overflow-hidden bg-bg-card border-[0.5px] border-border-subtle backdrop-blur-md p-6 lg:p-7 flex flex-col justify-end transition-all duration-400 ease-[--ease-custom] hover:border-border-gold hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_0.5px_rgba(200,150,60,0.12)] group min-h-[260px] md:min-h-0"
+      className="relative rounded-[14px] overflow-hidden bg-bg-card border-[0.5px] border-border-subtle backdrop-blur-md p-8 flex flex-col justify-end transition-all duration-400 ease-[--ease-custom] hover:border-border-gold hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_0.5px_rgba(200,150,60,0.12)] group min-h-[260px] md:min-h-0"
       style={{ perspective: 800 }}
       whileHover={{ rotateX: 2, rotateY: -2, y: -4 }}
     >
@@ -94,7 +94,7 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
           {card.num}
           <span className="block w-[22px] h-px bg-gold/50" />
         </div>
-        <h3 className="font-serif text-[1.4rem] tracking-tight font-semibold text-cream leading-[1.2] mb-2.5 break-words">
+        <h3 className="font-serif text-[1.6rem] font-semibold text-cream leading-[1.2] mb-2.5">
           {card.title}
         </h3>
         <p className="text-[0.85rem] leading-[1.72] text-cream-muted">
@@ -118,7 +118,7 @@ export default function Services() {
   const featureInView = useInView(featureRef, { once: true, margin: "-10%" });
 
   return (
-    <section id="services" className="relative z-[1] bg-bg min-h-[100dvh] pt-24">
+    <section id="services" className="relative z-[1] bg-bg">
       <div className="max-w-[1180px] mx-auto px-6 py-20 md:p-28">
         
         {/* Header */}

@@ -23,12 +23,7 @@
 @layer base {
   body {
     @apply bg-bg text-cream font-sans font-light overflow-x-hidden;
-  }
-
-  @media (min-width: 768px) {
-    body {
-      cursor: none;
-    }
+    cursor: none;
   }
 
   body::after {
@@ -42,10 +37,8 @@
     background-size: 180px;
   }
 
-  @media (min-width: 768px) {
-    a, button, input, textarea {
-      cursor: none;
-    }
+  a, button, input, textarea {
+    cursor: none;
   }
 
   html {

@@ -11,14 +11,10 @@ import MarqueeTicker from "./components/MarqueeTicker";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import SEO from "./components/SEO";
-import CookieBanner from "./components/CookieBanner";
-import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
     <>
-      <SEO />
       {/* Background & Overlays */}
       <GlobalEffects />
       <CustomCursor />
@@ -27,16 +23,14 @@ export default function App() {
       <Navbar />
       
       <main>
-        <Routes>
-          <Route path="/" element={<><Hero /><MarqueeTicker /></>} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Hero />
+        <MarqueeTicker />
+        <About />
+        <Services />
+        <Contact />
       </main>
       
       <Footer />
-      <CookieBanner />
     </>
   );
 }
