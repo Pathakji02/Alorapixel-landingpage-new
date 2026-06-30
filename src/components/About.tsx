@@ -21,7 +21,7 @@ const Constellation = React.memo(function Constellation() {
       {stars.map((star, i) => (
         <motion.div
           key={i}
-          className="absolute w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_8px_rgba(200,150,60,0.8)] blur-[0.5px]"
+          className="absolute w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_8px_rgba(198,166,100,0.8)] blur-[0.5px]"
           initial={{
             top: star.initialTop,
             left: star.initialLeft,
@@ -117,7 +117,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.3rem] font-bold text-cream mb-4">Design with Intent</h4>
               <p className="text-cream-muted text-[0.9rem] leading-relaxed mb-4">
@@ -131,7 +131,7 @@ export default function About() {
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.3rem] font-bold text-cream mb-4">Engage Authentically</h4>
               <p className="text-cream-muted text-[0.9rem] leading-relaxed mb-4">
@@ -145,7 +145,7 @@ export default function About() {
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.3rem] font-bold text-cream mb-4">Convert Effectively</h4>
               <p className="text-cream-muted text-[0.9rem] leading-relaxed mb-4">
@@ -170,7 +170,7 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Strategic Thinking</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
@@ -179,7 +179,7 @@ export default function About() {
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Creative Execution</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
@@ -188,7 +188,7 @@ export default function About() {
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Modern Marketing</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">
@@ -197,7 +197,7 @@ export default function About() {
             </motion.div>
             <motion.div
               whileHover={{ y: -6, scale: 1.02 }}
-              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(200,150,60,0.12)] hover:bg-white/5"
+              className="p-8 bg-surface border border-border-subtle rounded-sm transition-all duration-300 ease-out hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(198,166,100,0.12)] hover:bg-white/5"
             >
               <h4 className="text-[1.2rem] font-bold text-cream mb-3">Growth-Focused Results</h4>
               <p className="text-[0.95rem] leading-[1.7] text-cream-muted font-light">

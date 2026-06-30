@@ -80,7 +80,7 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
       initial={{ opacity: 0, y: 48 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.75, delay: index * 0.12, ease: [0.23, 1, 0.32, 1] }}
-      className="relative rounded-[14px] overflow-hidden bg-bg-card border-[0.5px] border-border-subtle backdrop-blur-md p-6 lg:p-7 flex flex-col justify-end transition-all duration-400 ease-[--ease-custom] hover:border-border-gold hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_0.5px_rgba(200,150,60,0.12)] group min-h-[260px] md:min-h-0"
+      className="relative rounded-[14px] overflow-hidden bg-bg-card border-[0.5px] border-border-subtle backdrop-blur-md p-6 lg:p-7 flex flex-col justify-end transition-all duration-400 ease-[--ease-custom] hover:border-border-gold hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_0.5px_rgba(198,166,100,0.12)] group min-h-[260px] md:min-h-0"
       style={{ perspective: 800 }}
       whileHover={{ rotateX: 2, rotateY: -2, y: -4 }}
     >
@@ -88,7 +88,7 @@ function BentoCard({ card, index }: { key?: string, card: ServiceCard; index: nu
         className="absolute inset-[0] bg-cover bg-center opacity-[0.18] z-[0] transition-all duration-[600ms] ease-[--ease-custom] group-hover:opacity-30 group-hover:scale-[1.06]" 
         style={{ backgroundImage: `url('${card.image}')` }} 
       />
-      <div className="absolute inset-[0] z-[1] bg-gradient-to-t from-[#160E00]/95 via-[#160E00]/30 to-transparent" />
+      <div className="absolute inset-[0] z-[1] bg-gradient-to-t from-[#121110]/95 via-[#121110]/30 to-transparent" />
       
       <div className="relative z-[2]">
         <div className="font-serif text-xs font-semibold tracking-[0.2em] text-gold flex items-center gap-2 mb-3.5">

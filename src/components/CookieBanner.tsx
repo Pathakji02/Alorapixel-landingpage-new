@@ -60,7 +60,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleAccept}
-                className="flex-1 md:flex-none px-6 py-2.5 rounded-lg bg-gold text-[#140C00] text-[0.85rem] font-medium hover:bg-gold-bright transition-colors duration-200 shadow-[0_0_15px_rgba(200,150,60,0.2)] hover:shadow-[0_0_20px_rgba(230,184,74,0.4)]"
+                className="flex-1 md:flex-none px-6 py-2.5 rounded-lg bg-gold text-[#121110] text-[0.85rem] font-medium hover:bg-gold-bright transition-colors duration-200 shadow-[0_0_15px_rgba(198,166,100,0.2)] hover:shadow-[0_0_20px_rgba(198,166,100,0.4)]"
               >
                 Accept
               </button>

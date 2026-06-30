@@ -5,17 +5,17 @@
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
 
-  --color-bg: #160E00;
-  --color-bg-mid: #1E1500;
+  --color-bg: #121110;
+  --color-bg-mid: #1A1814;
   --color-bg-card: rgba(255,255,255,0.04);
-  --color-gold: #C8963C;
-  --color-gold-bright: #E6B84A;
-  --color-gold-dim: #A07828;
-  --color-cream: #F5F0E8;
-  --color-cream-muted: rgba(245,240,232,0.6);
-  --color-cream-dim: rgba(245,240,232,0.28);
+  --color-gold: #C6A664;
+  --color-gold-bright: #C6A664;
+  --color-gold-dim: #B08B50;
+  --color-cream: #FDFBF7;
+  --color-cream-muted: #E6C687;
+  --color-cream-dim: rgba(253, 251, 247, 0.28);
   --color-border-subtle: rgba(255,255,255,0.07);
-  --color-border-gold: rgba(200,150,60,0.22);
+  --color-border-gold: rgba(198, 166, 100, 0.22);
   
   --ease-custom: cubic-bezier(0.23,1,0.32,1);
 }
@@ -55,7 +55,7 @@
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(90deg, #B87820 0%, #E6B84A 35%, #C8963C 65%, #A07828 100%);
+    background: linear-gradient(90deg, #B08B50 0%, #C6A664 35%, #B08B50 65%, #C6A664 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

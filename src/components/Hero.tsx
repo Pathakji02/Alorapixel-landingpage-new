@@ -13,7 +13,7 @@ export default function Hero() {
 
       {/* Rotating Rings */}
       <div className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] border-[0.5px] border-gold/10 rounded-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] pointer-events-none z-[0] animate-[ring-rot_30s_linear_infinite]">
-        <div className="absolute -top-[1px] left-[calc(50%-3px)] w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_12px_var(--color-gold),0_0_24px_rgba(200,150,60,0.4)]" />
+        <div className="absolute -top-[1px] left-[calc(50%-3px)] w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_12px_var(--color-gold),0_0_24px_rgba(198,166,100,0.4)]" />
       </div>
       <div className="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] border-[0.5px] border-gold/5 rounded-full top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] pointer-events-none z-[0] animate-[ring-rot_20s_linear_infinite_reverse]" />
       <style>{`
@@ -32,8 +32,8 @@ export default function Hero() {
       </motion.div>
       <style>{`
         @keyframes pulse-dot {
-          0%,100% { box-shadow:0 0 0 0 rgba(200,150,60,0.7); }
-          50%     { box-shadow:0 0 0 6px rgba(200,150,60,0); }
+          0%,100% { box-shadow:0 0 0 0 rgba(198,166,100,0.7); }
+          50%     { box-shadow:0 0 0 6px rgba(198,166,100,0); }
         }
       `}</style>
 
