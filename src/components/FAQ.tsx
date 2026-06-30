@@ -1,5 +1,5 @@
 import { motion, useInView, AnimatePresence } from 'motion/react';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQS = [
@@ -37,7 +37,7 @@ const FAQS = [
   }
 ];
 
-function FAQItem({ faq, index }: { faq: typeof FAQS[0], index: number }) {
+function FAQItem({ faq, index }: { key?: React.Key; faq: typeof FAQS[0], index: number }) {
   const [isOpen, setIsOpen] = useState(index === 0);
 
   return (
