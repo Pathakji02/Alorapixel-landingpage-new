@@ -21,22 +21,6 @@ export default function Hero() {
       `}</style>
       
       {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.28, ease: [0.23, 1, 0.32, 1] }}
-        className="relative z-10 inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-1.5 border-[0.5px] border-border-subtle rounded-full bg-white/5 backdrop-blur-md text-[0.68rem] font-medium tracking-[0.14em] uppercase text-cream-muted mb-8"
-      >
-        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-[pulse-dot_2.5s_ease-in-out_infinite]" />
-        Now Accepting Projects
-      </motion.div>
-      <style>{`
-        @keyframes pulse-dot {
-          0%,100% { box-shadow:0 0 0 0 rgba(200,150,60,0.7); }
-          50%     { box-shadow:0 0 0 6px rgba(200,150,60,0); }
-        }
-      `}</style>
-
       <motion.h1
         initial={{ opacity: 0, y: 36 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,22 +63,6 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Scroll Hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.9, delay: 1.15 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-2"
-      >
-        <span className="text-[0.6rem] tracking-[0.18em] uppercase text-cream-dim">Scroll</span>
-        <div className="w-[1px] h-[38px] bg-gradient-to-b from-gold to-transparent animate-[sline_2.2s_ease-in-out_infinite]" />
-      </motion.div>
-      <style>{`
-        @keyframes sline {
-          0%,100% { opacity:1; transform:scaleY(1); }
-          50%     { opacity:.3; transform:scaleY(.4); }
-        }
-      `}</style>
     </section>
   );
 }
